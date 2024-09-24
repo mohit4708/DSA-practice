@@ -1,6 +1,6 @@
 public class highestFreqElement {
     public static void main(String[] args){
-        int[] arr = {19,20,4,19,3,19,4,19};
+        int[] arr = {19,20,4,19,3,2,19,4,19};
         highestFreqElement he = new highestFreqElement();
         int max = he.maxElement(arr);
 
@@ -13,6 +13,9 @@ public class highestFreqElement {
 
         int element = he.highestFrequency(hash);
         System.out.println("The highest frequency element is :"+element);
+
+        int lowestFreq = he.lowestFrequency(hash);
+        System.out.println("The lowest frequency element is :"+lowestFreq);
 
     }
 
@@ -35,6 +38,17 @@ public class highestFreqElement {
             }
         }
 
+        return ele;
+    }
+
+    public int lowestFrequency(int[] hash){
+        int minC=Integer.MAX_VALUE , ele = 0;
+        for(int i=0;i<hash.length;i++){
+            if(minC>hash[i] && hash[i]!=0){
+                minC=hash[i];
+                ele = i;
+            }
+        }
         return ele;
     }
 }
