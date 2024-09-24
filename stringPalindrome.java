@@ -2,6 +2,7 @@ public class stringPalindrome
 {
     public static void main(String[] args){
         String s="malayalam";
+
         stringPalindrome sp = new stringPalindrome();
         String pal = sp.reverseString(s,"",s.length()-1);
         if(s.equals(pal)) {
